@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+  </head>
+  <body>
+    <nav class = "navbar navbar-default navbar-static-top">
+      <div class="container">
+        <ul class = "nav navbar-nav">
+          <li><a class = "navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+          <li><a class = "navbar-link" href="{% url 'admin:index' %}">ADMIN</a></li>
+          <li><a class = "navbar-link" href="{% url 'basic_app:other' %}">OTHER</a></li>
+          <li><a class = "navbar-link" href="{% url 'basic_app:relative' %}">RELATIVE_URLS_TEMPLATES</a></li>
+          <li><a class = "navbar-link" href="{% url 'basic_app:userdata' %}">USER DATA</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      {% block body_block %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
